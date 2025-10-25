@@ -24,5 +24,7 @@ public class StatusData : ScriptableObject
 
     [Header("Sign")]
     public string signText;
+    [Header("About Event")]
+    public string eventName;
     
 }

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 292a9de0c25388d49a39721d710646ee, type: 3}
-  m_Name: Sign01
+  m_Name: Sign02
   m_EditorClassIdentifier: 
   object_Type: 1
   ObjectPrefab: {fileID: 8449579740555333200, guid: aa658d9242240084c8878c3ec2527749, type: 3}
-  objectName: Sign01
+  objectName: Sign02
   moralStatsChange: 1
   insaneStatsChange: -1
   senseStatsChange: 2
   reuquirMoralStats: 59
   reuquirInsaneStats: 59
   reuquirSenseStats: 59
-  signText: can u go bro
+  signText: can u go

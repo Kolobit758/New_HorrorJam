@@ -395,7 +395,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7213814920374805835}
         m_TargetAssemblyTypeName: SignScript, Assembly-CSharp
-        m_MethodName: ChangePlayerstats
+        m_MethodName: ChageRound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -466,7 +466,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &7650481600332606005
 MonoBehaviour:
@@ -520,12 +520,12 @@ GameObject:
   - component: {fileID: 6967448555869161987}
   - component: {fileID: 7213814920374805835}
   m_Layer: 0
-  m_Name: Sign01
+  m_Name: Sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7582662839409668896
 Transform:
   m_ObjectHideFlags: 0
@@ -585,7 +585,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -609,5 +609,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be967cd944053742a0e686f03de804d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusData: {fileID: 11400000, guid: 6b07d01278e221c4bb1df6bad479fd6a, type: 2}
+  gameManager: {fileID: 0}
+  SignDatas:
+  - {fileID: 11400000, guid: 6b07d01278e221c4bb1df6bad479fd6a, type: 2}
+  - {fileID: 11400000, guid: 59cc76e453411544bb5fee725eaf5519, type: 2}
+  thisStatusData: {fileID: 0}
   textMeshPro: {fileID: 478694313759177224}

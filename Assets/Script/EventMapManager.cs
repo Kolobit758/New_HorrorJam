@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapTemplateScript : MonoBehaviour
+public class EventMapManager : MonoBehaviour
 {
     public SO_Object allGameObject;
     public List<StatusData> statusDatas = new List<StatusData>();
@@ -11,39 +11,6 @@ public class MapTemplateScript : MonoBehaviour
     public List<Transform> structure = new List<Transform>();
     public List<StatusData> validObjects = new List<StatusData>();
 
-    public void RandomObject(int currentMoralStats, int currentInsaneStats, int currentSenseStats)
-    {
-        statusDatas.Clear();
-        validObjects.Clear();
-        foreach (StatusData statusData in allGameObject.gameObjects)
-        {
-            statusDatas.Add(statusData);
-            Debug.Log("add : " + statusData.name);
-
-        }
-        // สร้างลิสต์เฉพาะที่ผ่านเงื่อนไข requirement
-        validObjects = statusDatas;
-
-
-        for (int i = validObjects.Count - 1; i >= 0; i--)
-        {
-            StatusData scopeData = validObjects[i];
-            if (scopeData.reuquirMoralStats < currentMoralStats || scopeData.reuquirInsaneStats < currentInsaneStats || scopeData.reuquirSenseStats < currentSenseStats)
-            {
-                validObjects.RemoveAt(i);
-            }
-
-
-        }
-        SpawnRandomObjects(validObjects, StatusData.objectType.Sign, signs);
-        SpawnRandomObjects(validObjects, StatusData.objectType.Item, items);
-        SpawnRandomObjects(validObjects, StatusData.objectType.structure, structure);
-
-
-
-
-
-    }
     public void RandomObject(int currentMoralStats, int currentInsaneStats, int currentSenseStats, string eventName)
     {
         statusDatas.Clear();
@@ -70,10 +37,12 @@ public class MapTemplateScript : MonoBehaviour
         SpawnRandomObjects(validObjects, StatusData.objectType.structure, structure);
 
     }
+    
 
     private void SpawnRandomObjects(List<StatusData> validObjects, StatusData.objectType type, List<Transform> spawnPoints)
     {
         List<StatusData> filtered = validObjects.FindAll(o => o.object_Type == type);
+        
         Debug.Log($"Spawning type {type} | Found {filtered.Count} valid objects | Spawn points {spawnPoints.Count}");
 
         for (int i = 0; i < spawnPoints.Count; i++)
@@ -91,8 +60,4 @@ public class MapTemplateScript : MonoBehaviour
             filtered.RemoveAt(randomIndex);
         }
     }
-
-
-
-
 }
