@@ -28,8 +28,18 @@ public class GameManager : MonoBehaviour
 
             if (currentMapInstance != null)
                 Destroy(currentMapInstance);
-
-            CreateMap();
+            if(currentRound == 2)
+            {
+                Debug.Log("EventAunt");
+                CreateMap("EventAunt");
+                
+            }
+            else
+            {   
+                Debug.Log("Normal");
+                CreateMap();
+            }
+            
         }
 
     }
@@ -70,43 +80,43 @@ public class GameManager : MonoBehaviour
         }
     }
     void CreateMap(string eventName)
-{
-    // หาว่า eventMapTemplates มีแมพที่ชื่อเดียวกับ eventName ไหม
-    GameObject selectedEventMap = eventMapTemplates.Find(map => map.name == eventName);
-
-    if (selectedEventMap != null)
     {
-        // สร้างแมพใหม่
-        currentMapInstance = Instantiate(selectedEventMap, Vector3.zero, Quaternion.identity);
+        // หาว่า eventMapTemplates มีแมพที่ชื่อเดียวกับ eventName ไหม
+        GameObject selectedEventMap = eventMapTemplates.Find(map => map.name == eventName);
 
-        // ✅ ดึงสคริปต์ MapTemplateScript จากแมพใหม่
-        currentMapTemplate = currentMapInstance.GetComponent<MapTemplateScript>();
-
-        // ✅ เรียกสุ่มวัตถุใน event map
-        if (currentMapTemplate != null)
+        if (selectedEventMap != null)
         {
-            currentMapTemplate.RandomObject(
-                playerManager.currentMoralStats,
-                playerManager.currentInsaneStats,
-                playerManager.currentSenseStats,
-                eventName
+            // สร้างแมพใหม่
+            currentMapInstance = Instantiate(selectedEventMap, Vector3.zero, Quaternion.identity);
 
-            );
+            // ✅ ดึงสคริปต์ MapTemplateScript จากแมพใหม่
+            currentMapTemplate = currentMapInstance.GetComponent<MapTemplateScript>();
+
+            // ✅ เรียกสุ่มวัตถุใน event map
+            if (currentMapTemplate != null)
+            {
+                currentMapTemplate.RandomObject(
+                    playerManager.currentMoralStats,
+                    playerManager.currentInsaneStats,
+                    playerManager.currentSenseStats,
+                    eventName
+
+                );
+            }
+            else
+            {
+                Debug.LogError($"Event map '{eventName}' ไม่มี MapTemplateScript!");
+            }
+
+            Debug.Log($"Loaded event map: {eventName}");
         }
         else
         {
-            Debug.LogError($"Event map '{eventName}' ไม่มี MapTemplateScript!");
+            // ถ้าไม่เจอ event map ให้ fallback ไปสร้าง map ปกติ
+            Debug.LogWarning($"ไม่พบ event map ชื่อ '{eventName}' ใน eventMapTemplates — จะใช้แมพปกติแทน");
+            CreateMap();
         }
-
-        Debug.Log($"Loaded event map: {eventName}");
     }
-    else
-    {
-        // ถ้าไม่เจอ event map ให้ fallback ไปสร้าง map ปกติ
-        Debug.LogWarning($"ไม่พบ event map ชื่อ '{eventName}' ใน eventMapTemplates — จะใช้แมพปกติแทน");
-        CreateMap();
-    }
-}
 
 
 

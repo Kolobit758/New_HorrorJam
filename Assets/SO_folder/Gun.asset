@@ -18,8 +18,8 @@ MonoBehaviour:
   moralStatsChange: 0
   insaneStatsChange: 0
   senseStatsChange: 0
-  reuquirMoralStats: 0
-  reuquirInsaneStats: 0
-  reuquirSenseStats: 0
+  reuquirMoralStats: 59
+  reuquirInsaneStats: 59
+  reuquirSenseStats: 59
   signText: 
   eventName: EventAunt

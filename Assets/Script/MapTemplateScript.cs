@@ -11,41 +11,62 @@ public class MapTemplateScript : MonoBehaviour
     public List<Transform> structure = new List<Transform>();
     public List<StatusData> validObjects = new List<StatusData>();
 
-    public void RandomObject(int currentMoralStats, int currentInsaneStats, int currentSenseStats)
+    void Start()
     {
-        statusDatas.Clear();
-        validObjects.Clear();
         foreach (StatusData statusData in allGameObject.gameObjects)
         {
             statusDatas.Add(statusData);
             Debug.Log("add : " + statusData.name);
 
         }
+    }
+    public void RandomObject(int currentMoralStats, int currentInsaneStats, int currentSenseStats)
+    {
+
+        foreach (StatusData statusData in allGameObject.gameObjects)
+        {
+            statusDatas.Add(statusData);
+
+        }
+        validObjects.Clear();
+
         // สร้างลิสต์เฉพาะที่ผ่านเงื่อนไข requirement
-        validObjects = statusDatas;
+        validObjects = new List<StatusData>(statusDatas);
 
 
         for (int i = validObjects.Count - 1; i >= 0; i--)
         {
             StatusData scopeData = validObjects[i];
-            if (scopeData.reuquirMoralStats < currentMoralStats || scopeData.reuquirInsaneStats < currentInsaneStats || scopeData.reuquirSenseStats < currentSenseStats)
+            if (scopeData.reuquirMoralStats < currentMoralStats ||
+                scopeData.reuquirInsaneStats < currentInsaneStats ||
+                scopeData.reuquirSenseStats < currentSenseStats)
             {
+
                 validObjects.RemoveAt(i);
+
             }
+        }
+            foreach (StatusData valid in validObjects)
+            {
+                Debug.Log("NEW : " + valid.objectName);
+            }
+            SpawnRandomObjects(validObjects, StatusData.objectType.Sign, signs);
+            SpawnRandomObjects(validObjects, StatusData.objectType.Item, items);
+            SpawnRandomObjects(validObjects, StatusData.objectType.structure, structure);
+
+
+
 
 
         }
-        SpawnRandomObjects(validObjects, StatusData.objectType.Sign, signs);
-        SpawnRandomObjects(validObjects, StatusData.objectType.Item, items);
-        SpawnRandomObjects(validObjects, StatusData.objectType.structure, structure);
-
-
-
-
-
-    }
     public void RandomObject(int currentMoralStats, int currentInsaneStats, int currentSenseStats, string eventName)
     {
+        Debug.Log($"[Before Spawn] Valid count = {validObjects.Count}");
+        foreach (var v in validObjects)
+        {
+            Debug.Log($"✅ {v.name} | Type: {v.object_Type} | Require M/I/S: {v.reuquirMoralStats}/{v.reuquirInsaneStats}/{v.reuquirSenseStats}");
+        }
+
         statusDatas.Clear();
         validObjects.Clear();
         foreach (StatusData statusData in allGameObject.gameObjects)
@@ -54,17 +75,28 @@ public class MapTemplateScript : MonoBehaviour
 
         }
         // สร้างลิสต์เฉพาะที่ผ่านเงื่อนไข requirement
-        validObjects = statusDatas;
+        validObjects = new List<StatusData>(statusDatas);
 
 
         for (int i = validObjects.Count - 1; i >= 0; i--)
         {
             StatusData scopeData = validObjects[i];
-            if ((scopeData.reuquirMoralStats < currentMoralStats || scopeData.reuquirInsaneStats < currentInsaneStats || scopeData.reuquirSenseStats < currentSenseStats) && scopeData.eventName != eventName)
+            if (scopeData.eventName != eventName &&
+            (scopeData.reuquirMoralStats > currentMoralStats ||
+                scopeData.reuquirInsaneStats > currentInsaneStats ||
+                scopeData.reuquirSenseStats > currentSenseStats))
             {
+
+
+                Debug.Log($"❌ Removed {scopeData.name} | Require M/I/S: {scopeData.reuquirMoralStats}/{scopeData.reuquirInsaneStats}/{scopeData.reuquirSenseStats}");
                 validObjects.RemoveAt(i);
             }
+            else
+            {
+                Debug.Log($"✅ Kept {scopeData.name} | Type: {scopeData.object_Type}");
+            }
         }
+
         SpawnRandomObjects(validObjects, StatusData.objectType.Sign, signs);
         SpawnRandomObjects(validObjects, StatusData.objectType.Item, items);
         SpawnRandomObjects(validObjects, StatusData.objectType.structure, structure);

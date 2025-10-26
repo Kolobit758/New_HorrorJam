@@ -471,9 +471,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SignScript, Assembly-CSharp
-        m_MethodName: SetEventSignName
+      - m_Target: {fileID: 519420034}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ChangeRound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -535,6 +535,7 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -672,9 +673,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db423371927c16b4fbd2ea722b05f0cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moralStats: 100
-  insaneStats: 100
-  senseStats: 100
+  moralStats: 20
+  insaneStats: 20
+  senseStats: 20
   currentMoralStats: 0
   currentInsaneStats: 0
   currentSenseStats: 0
@@ -696,9 +697,32 @@ MonoBehaviour:
   mapTemplates:
   - {fileID: 5777740930762158712, guid: 11f3a9f6aa1fe6b43becb55be673bc32, type: 3}
   - {fileID: 5777740930762158712, guid: 18b856aa588f245408a484b49b0aa0bb, type: 3}
-  eventMapTemplates: []
+  eventMapTemplates:
+  - {fileID: 5777740930762158712, guid: dd0d05a151a33384f821ce21dbb815f4, type: 3}
   currentMapTemplate: {fileID: 0}
   currentMapInstance: {fileID: 0}
+--- !u!95 &519420035
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2c25a41fcf695314c91c14dbca7ecaca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
