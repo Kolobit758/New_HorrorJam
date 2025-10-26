@@ -5,12 +5,16 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int gameRoundTotal = 10;
-    [SerializeField] private int currentRound = 1;
+    public int currentRound = 1;
     public PlayerManager playerManager;
     public List<GameObject> mapTemplates = new List<GameObject>();
     public List<GameObject> eventMapTemplates = new List<GameObject>();
     public MapTemplateScript currentMapTemplate;
     public GameObject currentMapInstance;
+    [Header("Event")]
+    public GameObject signEventPrefab;
+    public GameObject signEventPos;
+    GameObject signEvent;
 
 
     void Start()
@@ -28,18 +32,20 @@ public class GameManager : MonoBehaviour
 
             if (currentMapInstance != null)
                 Destroy(currentMapInstance);
+            
+            Debug.Log("Normal");
+            CreateMap();
             if(currentRound == 2)
             {
-                Debug.Log("EventAunt");
-                CreateMap("EventAunt");
-                
+                signEvent = Instantiate(signEventPrefab);
+                signEvent.transform.position = signEventPos.transform.position;
+            } else
+            {
+                if(signEvent != null)
+                {
+                    Destroy(signEvent);
+                }
             }
-            else
-            {   
-                Debug.Log("Normal");
-                CreateMap();
-            }
-            
         }
 
     }
@@ -53,6 +59,8 @@ public class GameManager : MonoBehaviour
                 Destroy(currentMapInstance);
 
             CreateMap(eventName);
+
+            Destroy(signEvent);
         }
 
     }

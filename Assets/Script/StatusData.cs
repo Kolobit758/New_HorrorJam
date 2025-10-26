@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewStatusOBJ", menuName = "status/ new_object")]
@@ -26,5 +27,8 @@ public class StatusData : ScriptableObject
     public string signText;
     [Header("About Event")]
     public string eventName;
+
+    [Header("Skill")]
+    public ScriptableObject SO_Skill;
     
 }

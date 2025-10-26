@@ -14,8 +14,8 @@ public class InventoryManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void AddItem(StatusData newItem)
+    public void AddItem(StatusData newItem,GameObject objectItem)
     {
-        itemBar.AddItem(newItem);
+        itemBar.AddItem(newItem,objectItem);
     }
 }

@@ -12,10 +12,10 @@ public class ItemPicker : MonoBehaviour
             Debug.Log("เก็บของ: " + itemData.objectName);
 
             // เพิ่มของเข้าระบบ Inventory
-            InventoryManager.Instance.AddItem(itemData);
+            InventoryManager.Instance.AddItem(itemData,gameObject);
 
             // ทำให้ของในฉากหายไป
-            Destroy(gameObject);
+            
         }
         else
         {

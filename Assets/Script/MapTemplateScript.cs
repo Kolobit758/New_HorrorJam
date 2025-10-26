@@ -13,12 +13,7 @@ public class MapTemplateScript : MonoBehaviour
 
     void Start()
     {
-        foreach (StatusData statusData in allGameObject.gameObjects)
-        {
-            statusDatas.Add(statusData);
-            Debug.Log("add : " + statusData.name);
-
-        }
+       
     }
     public void RandomObject(int currentMoralStats, int currentInsaneStats, int currentSenseStats)
     {
@@ -37,6 +32,7 @@ public class MapTemplateScript : MonoBehaviour
         for (int i = validObjects.Count - 1; i >= 0; i--)
         {
             StatusData scopeData = validObjects[i];
+            
             if (scopeData.reuquirMoralStats < currentMoralStats ||
                 scopeData.reuquirInsaneStats < currentInsaneStats ||
                 scopeData.reuquirSenseStats < currentSenseStats)
@@ -81,7 +77,7 @@ public class MapTemplateScript : MonoBehaviour
         for (int i = validObjects.Count - 1; i >= 0; i--)
         {
             StatusData scopeData = validObjects[i];
-            if (scopeData.eventName != eventName &&
+            if (scopeData.object_Type != StatusData.objectType.Sign && scopeData.eventName != eventName &&
             (scopeData.reuquirMoralStats > currentMoralStats ||
                 scopeData.reuquirInsaneStats > currentInsaneStats ||
                 scopeData.reuquirSenseStats > currentSenseStats))
@@ -104,25 +100,31 @@ public class MapTemplateScript : MonoBehaviour
     }
 
     private void SpawnRandomObjects(List<StatusData> validObjects, StatusData.objectType type, List<Transform> spawnPoints)
+{
+    List<StatusData> filtered = validObjects.FindAll(o => o.object_Type == type);
+
+    for (int i = 0; i < spawnPoints.Count; i++)
     {
-        List<StatusData> filtered = validObjects.FindAll(o => o.object_Type == type);
-        Debug.Log($"Spawning type {type} | Found {filtered.Count} valid objects | Spawn points {spawnPoints.Count}");
+        if (filtered.Count == 0) break;
 
-        for (int i = 0; i < spawnPoints.Count; i++)
+        int randomIndex = Random.Range(0, filtered.Count);
+        StatusData chosen = filtered[randomIndex];
+        Transform spawn = spawnPoints[i];
+
+        GameObject Prefab = Instantiate(chosen.ObjectPrefab, spawn.position, spawn.rotation, transform);
+        Prefab.name = chosen.objectName;
+
+        // 🔹 กำหนด StatusData ให้ SignScript
+        SignScript signScript = Prefab.GetComponent<SignScript>();
+        if (signScript != null)
         {
-            if (filtered.Count == 0) break;
-
-            int randomIndex = Random.Range(0, filtered.Count);
-            StatusData chosen = filtered[randomIndex];
-            Transform spawn = spawnPoints[i];
-
-            Debug.Log($"Spawning {chosen.objectName} at {spawn.position}");
-            GameObject Prefab = Instantiate(chosen.ObjectPrefab, spawn.position, spawn.rotation, transform);
-            Prefab.name = chosen.objectName;
-
-            filtered.RemoveAt(randomIndex);
+            signScript.thisStatusData = chosen;
         }
+
+        filtered.RemoveAt(randomIndex);
     }
+}
+
 
 
 
