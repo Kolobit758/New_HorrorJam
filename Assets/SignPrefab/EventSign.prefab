@@ -610,7 +610,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  SignDatas:
-  - {fileID: 11400000, guid: 03ea2893817dc874382cc38a4a0fe84a, type: 2}
-  thisStatusData: {fileID: 0}
+  thisStatusData: {fileID: 11400000, guid: 03ea2893817dc874382cc38a4a0fe84a, type: 2}
   textMeshPro: {fileID: 478694313759177224}
