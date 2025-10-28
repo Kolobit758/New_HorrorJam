@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cffd49beaeb73e04db43f29c6cb8064f, type: 3}
-  m_Name: SwordSkill
+  m_Name: BuffaloSkill
   m_EditorClassIdentifier: 
-  statusData: {fileID: 11400000, guid: 6507abd97258fee41a97274204d3605d, type: 2}
+  statusData: {fileID: 11400000, guid: 57199dc60e25a92408ab4993b727fff0, type: 2}
   ghostCanChase:
   - {fileID: 11400000, guid: 82e5b013f08bed843b767a751373ef56, type: 2}
   chaseDelay: 0.5

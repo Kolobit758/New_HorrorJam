@@ -189,6 +189,7 @@ MonoBehaviour:
   structure: []
   Ghost: []
   validGhost: []
+  ghostGameObj: []
 --- !u!1 &6722516090957315685
 GameObject:
   m_ObjectHideFlags: 0

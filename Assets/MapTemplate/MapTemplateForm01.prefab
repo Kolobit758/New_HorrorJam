@@ -222,6 +222,7 @@ MonoBehaviour:
   Ghost:
   - {fileID: 8127215504150979217}
   validGhost: []
+  ghostGameObj: []
 --- !u!1 &6722516090957315685
 GameObject:
   m_ObjectHideFlags: 0

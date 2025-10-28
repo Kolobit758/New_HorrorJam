@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 292a9de0c25388d49a39721d710646ee, type: 3}
-  m_Name: Sword
+  m_Name: Storypaper
   m_EditorClassIdentifier: 
   object_Type: 0
-  ObjectPrefab: {fileID: 943793724596843024, guid: f4795530bd5ef1947a56394f8aa9102f, type: 3}
-  objectName: Sword
+  ObjectPrefab: {fileID: 8773823108677092190, guid: ae96b5acec2a7a9489c08c6b9b15466e, type: 3}
+  objectName: Storypaper
   moralStatsChange: 0
   insaneStatsChange: 0
   senseStatsChange: 0
@@ -23,4 +23,4 @@ MonoBehaviour:
   reuquirSenseStats: 60
   signText: 
   eventName: 
-  SO_Skill: {fileID: 11400000, guid: 7b25bb6db369a0c4b99c726ae0bdacd3, type: 2}
+  SO_Skill: {fileID: 11400000, guid: 2dd72d140adf9fd4187d3fd14ce7cb4b, type: 2}
