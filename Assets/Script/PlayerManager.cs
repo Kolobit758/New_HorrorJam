@@ -1,30 +1,89 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
-    
-    [SerializeField] private int moralStats; // ความดี
-    [SerializeField] private int insaneStats; // ความบ้าคลั่ง
-    [SerializeField] private int senseStats; // สติ
+    [Header("Player Stats")]
+    [SerializeField] private int moralStats;
+    [SerializeField] private int insaneStats;
+    [SerializeField] private int senseStats;
+
+    [Header("Current Values")]
     public int currentMoralStats;
     public int currentInsaneStats;
     public int currentSenseStats;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("UI Reference")]
+    public Slider senseSlider; // <<<< เพิ่มตรงนี้
+
     void Start()
     {
         currentMoralStats = moralStats;
         currentInsaneStats = insaneStats;
         currentSenseStats = senseStats;
+
+        // ตั้งค่าเริ่มต้นให้ slider
+        if (senseSlider != null)
+        {
+            senseSlider.maxValue = 100; // ตั้งค่าสูงสุดตามต้องการ
+            senseSlider.value = currentSenseStats;
+        }
     }
 
-    
     public void ChangePlayerStatus(StatusData statusData)
     {
         currentMoralStats += statusData.moralStatsChange;
         currentInsaneStats += statusData.insaneStatsChange;
         currentSenseStats += statusData.senseStatsChange;
 
-        Debug.Log("Player current status Moral: " + currentMoralStats + " Insane: " + currentInsaneStats + " Sense: " + currentSenseStats);
+        Check();
+
+        Debug.Log($"Player current status Moral: {currentMoralStats}, Insane: {currentInsaneStats}, Sense: {currentSenseStats}");
+
+        UpdateUI();
+    }
+
+    public void ReduceSense(int reduceValue)
+    {
+        currentSenseStats -= reduceValue;
+        Check();
+        Debug.Log($"Player current status Moral: {currentMoralStats}, Insane: {currentInsaneStats}, Sense: {currentSenseStats}");
+        UpdateUI();
+    }
+    void UpdateUI()
+    {
+        if (senseSlider != null)
+        {
+            senseSlider.value = currentSenseStats;
+        }
+    }
+
+    void Check()
+    {
+        if (currentInsaneStats > insaneStats)
+        {
+            currentInsaneStats = insaneStats;
+        }
+        else if (currentInsaneStats < 0)
+        {
+            currentInsaneStats = 0;
+        }
+
+        if (currentMoralStats > moralStats)
+        {
+            currentMoralStats = moralStats;
+        }
+        else if (currentMoralStats < 0)
+        {
+            currentMoralStats = 0;
+        }
+        if (currentSenseStats > senseStats)
+        {
+            currentSenseStats = senseStats;
+        }
+        else if (currentSenseStats < 0)
+        {
+            currentSenseStats = 0;
+        }
     }
 }

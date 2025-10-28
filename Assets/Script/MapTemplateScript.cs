@@ -1,19 +1,24 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MapTemplateScript : MonoBehaviour
 {
     public SO_Object allGameObject;
     public List<StatusData> statusDatas = new List<StatusData>();
+    public List<StatusData> ghostPrefab = new List<StatusData>();
     public GameObject background;
     public List<Transform> signs = new List<Transform>();
     public List<Transform> items = new List<Transform>();
     public List<Transform> structure = new List<Transform>();
-    public List<StatusData> validObjects = new List<StatusData>();
+    public List<Transform> Ghost = new List<Transform>();
+    private List<StatusData> validObjects = new List<StatusData>();
+    public List<StatusData> validGhost = new List<StatusData>();
+    public List<GameObject> ghostGameObj = new List<GameObject>();
 
     void Start()
     {
-       
+
     }
     public void RandomObject(int currentMoralStats, int currentInsaneStats, int currentSenseStats)
     {
@@ -32,29 +37,29 @@ public class MapTemplateScript : MonoBehaviour
         for (int i = validObjects.Count - 1; i >= 0; i--)
         {
             StatusData scopeData = validObjects[i];
-            
-            if (scopeData.reuquirMoralStats < currentMoralStats ||
-                scopeData.reuquirInsaneStats < currentInsaneStats ||
-                scopeData.reuquirSenseStats < currentSenseStats)
+
+            if (scopeData.reuquirMoralStats > currentMoralStats ||
+                scopeData.reuquirInsaneStats > currentInsaneStats ||
+                scopeData.reuquirSenseStats > currentSenseStats)
             {
 
                 validObjects.RemoveAt(i);
 
             }
         }
-            foreach (StatusData valid in validObjects)
-            {
-                Debug.Log("NEW : " + valid.objectName);
-            }
-            SpawnRandomObjects(validObjects, StatusData.objectType.Sign, signs);
-            SpawnRandomObjects(validObjects, StatusData.objectType.Item, items);
-            SpawnRandomObjects(validObjects, StatusData.objectType.structure, structure);
-
-
-
-
-
+        foreach (StatusData valid in validObjects)
+        {
+            Debug.Log("NEW : " + valid.objectName);
         }
+        SpawnRandomObjects(validObjects, StatusData.objectType.Sign, signs);
+        SpawnRandomObjects(validObjects, StatusData.objectType.Item, items);
+        SpawnRandomObjects(validObjects, StatusData.objectType.structure, structure);
+
+
+
+
+
+    }
     public void RandomObject(int currentMoralStats, int currentInsaneStats, int currentSenseStats, string eventName)
     {
         Debug.Log($"[Before Spawn] Valid count = {validObjects.Count}");
@@ -100,33 +105,53 @@ public class MapTemplateScript : MonoBehaviour
     }
 
     private void SpawnRandomObjects(List<StatusData> validObjects, StatusData.objectType type, List<Transform> spawnPoints)
-{
-    List<StatusData> filtered = validObjects.FindAll(o => o.object_Type == type);
-
-    for (int i = 0; i < spawnPoints.Count; i++)
     {
-        if (filtered.Count == 0) break;
+        List<StatusData> filtered = validObjects.FindAll(o => o.object_Type == type);
 
-        int randomIndex = Random.Range(0, filtered.Count);
-        StatusData chosen = filtered[randomIndex];
-        Transform spawn = spawnPoints[i];
-
-        GameObject Prefab = Instantiate(chosen.ObjectPrefab, spawn.position, spawn.rotation, transform);
-        Prefab.name = chosen.objectName;
-
-        // 🔹 กำหนด StatusData ให้ SignScript
-        SignScript signScript = Prefab.GetComponent<SignScript>();
-        if (signScript != null)
+        for (int i = 0; i < spawnPoints.Count; i++)
         {
-            signScript.thisStatusData = chosen;
+            if (filtered.Count == 0) break;
+
+            int randomIndex = Random.Range(0, filtered.Count);
+            StatusData chosen = filtered[randomIndex];
+            Transform spawn = spawnPoints[i];
+
+            GameObject Prefab = Instantiate(chosen.ObjectPrefab, spawn.position, spawn.rotation, transform);
+            Prefab.name = chosen.objectName;
+
+            // 🔹 กำหนด StatusData ให้ SignScript
+            SignScript signScript = Prefab.GetComponent<SignScript>();
+            if (signScript != null)
+            {
+                signScript.thisStatusData = chosen;
+            }
+
+            filtered.RemoveAt(randomIndex);
+        }
+    }
+
+    public void SpawnGhost()
+    {
+        ghostGameObj.Clear(); // เคลียร์ก่อน spawn ใหม่
+
+        // สร้างผีใหม่ตามตำแหน่งที่ตั้งไว้
+        foreach (Transform spawn in Ghost)
+        {
+            int randomIndex = Random.Range(0, ghostPrefab.Count);
+            StatusData chosen = ghostPrefab[randomIndex];
+            GameObject prefab = Instantiate(chosen.ObjectPrefab, spawn.position, spawn.rotation, transform);
+
+            prefab.name = chosen.objectName;
+            ghostGameObj.Add(prefab);
+
+            // Debug log
+            GhostScript ghostScript = prefab.GetComponentInChildren<GhostScript>();
+            if (ghostScript != null)
+                Debug.Log($"✅ Spawned ghost: {prefab.name}");
+            else
+                Debug.LogWarning($"⚠️ {prefab.name} ไม่มี GhostScript");
         }
 
-        filtered.RemoveAt(randomIndex);
+        Debug.Log($"👻 Spawned {ghostGameObj.Count} ghosts!");
     }
-}
-
-
-
-
-
 }

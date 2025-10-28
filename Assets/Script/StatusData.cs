@@ -9,7 +9,9 @@ public class StatusData : ScriptableObject
         Item,
         Sign,
         structure,
-        SignEvent
+        SignEvent,
+        ghost
+
     }
     public objectType object_Type;
     public GameObject ObjectPrefab;

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -29,11 +30,13 @@ public class GameManager : MonoBehaviour
         if (currentRound <= gameRoundTotal)
         {
             currentRound++;
-
+            
             if (currentMapInstance != null)
                 Destroy(currentMapInstance);
-            
+
             Debug.Log("Normal");
+            // jumpscare if has ghost
+            
             CreateMap();
             if(currentRound == 2)
             {
@@ -81,6 +84,11 @@ public class GameManager : MonoBehaviour
         if (currentMapTemplate != null)
         {
             currentMapTemplate.RandomObject(playerManager.currentMoralStats, playerManager.currentInsaneStats, playerManager.currentSenseStats);
+            if(playerManager.currentSenseStats < 80)
+            {
+                currentMapTemplate.SpawnGhost();
+                Debug.Log("SpawnGhost");
+            }
         }
         else
         {
