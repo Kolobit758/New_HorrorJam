@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
 {
     [Header("Player Stats")]
+    public BlindnessScreenScript blindnessScreenScript;
     [SerializeField] private int moralStats;
     [SerializeField] private int insaneStats;
     [SerializeField] private int senseStats;
@@ -37,7 +38,7 @@ public class PlayerManager : MonoBehaviour
         currentSenseStats += statusData.senseStatsChange;
 
         Check();
-
+        blindnessScreenScript.ReduceTransparency(currentSenseStats);
         Debug.Log($"Player current status Moral: {currentMoralStats}, Insane: {currentInsaneStats}, Sense: {currentSenseStats}");
 
         UpdateUI();
@@ -47,6 +48,7 @@ public class PlayerManager : MonoBehaviour
     {
         currentSenseStats -= reduceValue;
         Check();
+        blindnessScreenScript.ReduceTransparency(currentSenseStats);
         Debug.Log($"Player current status Moral: {currentMoralStats}, Insane: {currentInsaneStats}, Sense: {currentSenseStats}");
         UpdateUI();
     }

@@ -17,10 +17,10 @@ MonoBehaviour:
   objectName: Candle
   moralStatsChange: 0
   insaneStatsChange: 0
-  senseStatsChange: 0
+  senseStatsChange: 15
   reuquirMoralStats: 60
   reuquirInsaneStats: 60
   reuquirSenseStats: 60
   signText: 
   eventName: 
-  SO_Skill: {fileID: 0}
+  SO_Skill: {fileID: 11400000, guid: 04e3c20c9a086404da5a5122825b1397, type: 2}
