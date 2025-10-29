@@ -16,9 +16,11 @@ public class PlayerManager : MonoBehaviour
 
     [Header("UI Reference")]
     public Slider senseSlider; // <<<< เพิ่มตรงนี้
+    public SubmaryUIManager submaryUIManager;
 
     void Start()
     {
+        submaryUIManager = FindFirstObjectByType<SubmaryUIManager>();
         currentMoralStats = moralStats;
         currentInsaneStats = insaneStats;
         currentSenseStats = senseStats;
@@ -89,11 +91,17 @@ public class PlayerManager : MonoBehaviour
         }
         if (currentSenseStats > senseStats)
         {
+
             currentSenseStats = senseStats;
         }
         else if (currentSenseStats < 0)
         {
             currentSenseStats = 0;
+        }
+        
+        if(currentSenseStats <= 0)
+        {
+            submaryUIManager.DieEnding();
         }
     }
 }

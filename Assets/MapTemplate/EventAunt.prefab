@@ -212,6 +212,7 @@ MonoBehaviour:
   ghostPrefab:
   - {fileID: 11400000, guid: 27b32090426ef9847a4270934a5ac2f7, type: 2}
   - {fileID: 11400000, guid: 496e93eb8fc2a984aaa64fb4f5e2ed7a, type: 2}
+  - {fileID: 11400000, guid: b6685439e29b08e448d553678ded1edd, type: 2}
   background: {fileID: 5777740930762158712}
   signs:
   - {fileID: 1435665025313253486}

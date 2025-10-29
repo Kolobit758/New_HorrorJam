@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         playerManager = GetComponent<PlayerManager>();
+        signEvent = Instantiate(signEventPrefab[0]);
+        signEvent.transform.position = signEventPos.transform.position;
+        Debug.Log("Backhome sign");
         CreateMap();
 
     }
@@ -30,29 +33,33 @@ public class GameManager : MonoBehaviour
         if (currentRound <= gameRoundTotal)
         {
             currentRound++;
-            
+
             if (currentMapInstance != null)
                 Destroy(currentMapInstance);
 
             Debug.Log("Normal");
             // jumpscare if has ghost
-            if(currentRound == 15)
+            if (currentRound == 15)
             {
                 playerManager.ReduceMoraltoZero();
             }
             CreateMap();
-            if(currentRound == 2)
+
+            if (currentRound == 2)
             {
-                signEvent = Instantiate(signEventPrefab[0]);
-                signEvent.transform.position = signEventPos.transform.position;
-            }else if (currentRound == 15)
-            {
-                
+                Destroy(signEvent);
                 signEvent = Instantiate(signEventPrefab[1]);
                 signEvent.transform.position = signEventPos.transform.position;
-            } else
+            }
+            else if (currentRound == 15)
             {
-                if(signEvent != null)
+
+                signEvent = Instantiate(signEventPrefab[2]);
+                signEvent.transform.position = signEventPos.transform.position;
+            }
+            else
+            {
+                if (signEvent != null)
                 {
                     Destroy(signEvent);
                 }
@@ -92,7 +99,7 @@ public class GameManager : MonoBehaviour
         if (currentMapTemplate != null)
         {
             currentMapTemplate.RandomObject(playerManager.currentMoralStats, playerManager.currentInsaneStats, playerManager.currentSenseStats);
-            if(playerManager.currentSenseStats < 80)
+            if (playerManager.currentSenseStats < 80)
             {
                 currentMapTemplate.SpawnGhost();
                 Debug.Log("SpawnGhost");

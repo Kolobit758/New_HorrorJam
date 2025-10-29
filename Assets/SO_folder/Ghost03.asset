@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 292a9de0c25388d49a39721d710646ee, type: 3}
-  m_Name: Ring
+  m_Name: Ghost03
   m_EditorClassIdentifier: 
-  object_Type: 0
-  ObjectPrefab: {fileID: 1829877719544072690, guid: 85a662669e6f4b34d9026d983009fdc8, type: 3}
-  objectName: Ring
+  object_Type: 4
+  ObjectPrefab: {fileID: 3476863539415955512, guid: f2c3cbc987b06b040a5ad0123e628fe5, type: 3}
+  objectName: Ghost01
   moralStatsChange: 0
   insaneStatsChange: 0
-  senseStatsChange: 1
-  reuquirMoralStats: 60
-  reuquirInsaneStats: 60
-  reuquirSenseStats: 60
+  senseStatsChange: 0
+  reuquirMoralStats: 0
+  reuquirInsaneStats: 0
+  reuquirSenseStats: 0
   signText: 
   eventName: 
-  SO_Skill: {fileID: 11400000, guid: 6419539b1a54976469ee39db4f5062ce, type: 2}
+  SO_Skill: {fileID: 0}
