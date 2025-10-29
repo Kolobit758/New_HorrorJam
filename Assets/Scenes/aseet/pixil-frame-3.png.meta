@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: ec7df6722a211814f86b63fa0ede8bd9
+guid: 446d741a4cb0a884396e44f1bddd06b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7967611355109255902
-    second: "\u0E1C\u0E35\u0E22\u0E34\u0E49\u0E21 jump scare _0"
+      213: -7138501363732420223
+    second: pixil-frame-3_0
+  - first:
+      213: -7453806314625018048
+    second: pixil-frame-3_1
+  - first:
+      213: 1738628551500861703
+    second: pixil-frame-3_2
+  - first:
+      213: -4507588886805715527
+    second: pixil-frame-3_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +105,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0E1C\u0E35\u0E22\u0E34\u0E49\u0E21 jump scare _0"
+      name: pixil-frame-3_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 0
-        width: 300
-        height: 294
+        width: 190
+        height: 221
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 225185ecfab5d6190800000000000000
-      internalID: -7967611355109255902
+      spriteID: 1896612c4d2feec90800000000000000
+      internalID: -7138501363732420223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixil-frame-3_1
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 0
+        width: 190
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 047563816a2ce8890800000000000000
+      internalID: -7453806314625018048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixil-frame-3_2
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 0
+        width: 190
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7019f88b479d02810800000000000000
+      internalID: 1738628551500861703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixil-frame-3_3
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 0
+        width: 190
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b562782ac3d171c0800000000000000
+      internalID: -4507588886805715527
       vertices: []
       indices: 
       edges: []
@@ -147,8 +209,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "\u0E1C\u0E35\u0E22\u0E34\u0E49\u0E21 jump scare _0": -7967611355109255902
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

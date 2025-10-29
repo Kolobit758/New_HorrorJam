@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: ec7df6722a211814f86b63fa0ede8bd9
+guid: 149aa6f0959acb54cad5c93130ccce07
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7967611355109255902
-    second: "\u0E1C\u0E35\u0E22\u0E34\u0E49\u0E21 jump scare _0"
+      213: -6761898647415239883
+    second: grasyeye 1_0
+  - first:
+      213: -5804440836129515929
+    second: grasyeye 1_1
+  - first:
+      213: 4617899970159465107
+    second: grasyeye 1_2
+  - first:
+      213: -8890521036732628849
+    second: grasyeye 1_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +105,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0E1C\u0E35\u0E22\u0E34\u0E49\u0E21 jump scare _0"
+      name: grasyeye 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 300
-        height: 294
+        width: 2002
+        height: 1915
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 225185ecfab5d6190800000000000000
-      internalID: -7967611355109255902
+      spriteID: 53bce999109e822a0800000000000000
+      internalID: -6761898647415239883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grasyeye 1_1
+      rect:
+        serializedVersion: 2
+        x: 2029
+        y: 0
+        width: 2061
+        height: 2002
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7669ab210db727fa0800000000000000
+      internalID: -5804440836129515929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grasyeye 1_2
+      rect:
+        serializedVersion: 2
+        x: 3769
+        y: 0
+        width: 1829
+        height: 581
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39254a16e83161040800000000000000
+      internalID: 4617899970159465107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grasyeye 1_3
+      rect:
+        serializedVersion: 2
+        x: 5248
+        y: 521
+        width: 1887
+        height: 698
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f800a6998368e9480800000000000000
+      internalID: -8890521036732628849
       vertices: []
       indices: 
       edges: []
@@ -147,8 +209,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "\u0E1C\u0E35\u0E22\u0E34\u0E49\u0E21 jump scare _0": -7967611355109255902
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
