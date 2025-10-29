@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: fe73eecaeb998d049b87f92f660c6472
+guid: 5219e078172c4dd4f8eb8fa8397b9be8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7814599323529752379
-    second: BoodishAmulet_0
+      213: 3150078376679577576
+    second: pixil-frame-24_0
+  - first:
+      213: 390192748426435247
+    second: pixil-frame-24_1
+  - first:
+      213: -1206486717768797440
+    second: pixil-frame-24_2
+  - first:
+      213: -5252097630406609086
+    second: pixil-frame-24_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +105,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BoodishAmulet_0
+      name: pixil-frame-24_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 225
-        height: 225
+        x: 473
+        y: 455
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3faff46ea8037c60800000000000000
-      internalID: 7814599323529752379
+      spriteID: 8e710a0089357bb20800000000000000
+      internalID: 3150078376679577576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixil-frame-24_1
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 425
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa14e3cc3e3a6500800000000000000
+      internalID: 390192748426435247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixil-frame-24_2
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 437
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 003f921f8b2b14fe0800000000000000
+      internalID: -1206486717768797440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixil-frame-24_3
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 119
+        width: 428
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24771fd280dcc17b0800000000000000
+      internalID: -5252097630406609086
       vertices: []
       indices: 
       edges: []
@@ -147,8 +209,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      BoodishAmulet_0: 7814599323529752379
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
