@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 20
   m_Sprite: {fileID: 7506424316134843610, guid: 4e1c354d93a093e48aaa39b5ce725241, type: 3}
   m_Color: {r: 0.1909275, g: 0, b: 1, a: 1}
   m_FlipX: 0
@@ -151,7 +151,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisStatusData: {fileID: 11400000, guid: 82e5b013f08bed843b767a751373ef56, type: 2}
   GhostJumpScare: {fileID: 8037738530463636143}
+  jumpscareWarning: {fileID: 0}
   jumpscareSound: {fileID: 0}
+  audioSource: {fileID: 0}
   senseReduceValue: 10
   jumpScareDelay: 5
   JumpScareDuration: 4

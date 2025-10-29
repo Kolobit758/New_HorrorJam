@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cffd49beaeb73e04db43f29c6cb8064f, type: 3}
+  m_Script: {fileID: 11500000, guid: 58bff8d85916eb44bbb7dc05d834025c, type: 3}
   m_Name: BuffaloSkill
   m_EditorClassIdentifier: 
-  statusData: {fileID: 11400000, guid: 57199dc60e25a92408ab4993b727fff0, type: 2}
-  ghostCanChase:
-  - {fileID: 11400000, guid: 496e93eb8fc2a984aaa64fb4f5e2ed7a, type: 2}
-  chaseDelay: 0.5
+  statusData: {fileID: 0}
+  ghostCanChase: []
+  chaseDelay: 0.2

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MapTemplateScript : MonoBehaviour
 {
@@ -15,10 +16,11 @@ public class MapTemplateScript : MonoBehaviour
     private List<StatusData> validObjects = new List<StatusData>();
     public List<StatusData> validGhost = new List<StatusData>();
     public List<GameObject> ghostGameObj = new List<GameObject>();
+    
 
     void Start()
     {
-
+        
     }
     public void RandomObject(int currentMoralStats, int currentInsaneStats, int currentSenseStats)
     {
