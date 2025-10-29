@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusData: {fileID: 11400000, guid: 57199dc60e25a92408ab4993b727fff0, type: 2}
   ghostCanChase:
-  - {fileID: 11400000, guid: 82e5b013f08bed843b767a751373ef56, type: 2}
+  - {fileID: 11400000, guid: 496e93eb8fc2a984aaa64fb4f5e2ed7a, type: 2}
   chaseDelay: 0.5

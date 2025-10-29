@@ -17,7 +17,7 @@ MonoBehaviour:
   objectName: Amulet
   moralStatsChange: 0
   insaneStatsChange: 0
-  senseStatsChange: 10
+  senseStatsChange: 2
   reuquirMoralStats: 60
   reuquirInsaneStats: 60
   reuquirSenseStats: 60

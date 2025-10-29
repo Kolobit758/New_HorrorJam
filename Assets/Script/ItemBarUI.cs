@@ -16,7 +16,7 @@ public class ItemBarUI : MonoBehaviour
     public RectTransform animationLayer; // ใส่ Canvas Panel สำหรับ Animation
     public float animDuration = 0.5f;
 
-    private StatusData[] slotItems; // แทน List
+    [SerializeField]private StatusData[] slotItems; // แทน List
 
     void Start()
     {

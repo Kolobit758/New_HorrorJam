@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &23864959983448359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5173284389671051590}
+  m_Layer: 0
+  m_Name: Item03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5173284389671051590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23864959983448359}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.18, y: -2.72, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1234389157584895433}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1277965385190228583
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 4783845347690055488}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.6, y: -2.72, z: 0}
+  m_LocalPosition: {x: 14.52, y: -2.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -160,6 +191,7 @@ Transform:
   - {fileID: 4941852823886184657}
   - {fileID: 7018329357940043880}
   - {fileID: 4541539404695116030}
+  - {fileID: 5173284389671051590}
   - {fileID: 8693958920742952721}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -178,7 +210,8 @@ MonoBehaviour:
   allGameObject: {fileID: 11400000, guid: 764992efe3697354e87377f2b13b5b20, type: 2}
   statusDatas: []
   ghostPrefab:
-  - {fileID: 11400000, guid: 82e5b013f08bed843b767a751373ef56, type: 2}
+  - {fileID: 11400000, guid: 27b32090426ef9847a4270934a5ac2f7, type: 2}
+  - {fileID: 11400000, guid: 496e93eb8fc2a984aaa64fb4f5e2ed7a, type: 2}
   background: {fileID: 5777740930762158712}
   signs:
   - {fileID: 1435665025313253486}
@@ -186,11 +219,13 @@ MonoBehaviour:
   items:
   - {fileID: 7018329357940043880}
   - {fileID: 4541539404695116030}
+  - {fileID: 5173284389671051590}
   structure:
   - {fileID: 8693958920742952721}
   Ghost:
   - {fileID: 2417176752712695824}
   validGhost: []
+  ghostGameObj: []
 --- !u!1 &6722516090957315685
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +334,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.7687647, g: 0.53396225, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.78840435, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

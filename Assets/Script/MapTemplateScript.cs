@@ -82,13 +82,8 @@ public class MapTemplateScript : MonoBehaviour
         for (int i = validObjects.Count - 1; i >= 0; i--)
         {
             StatusData scopeData = validObjects[i];
-            if (scopeData.object_Type != StatusData.objectType.Sign && scopeData.eventName != eventName &&
-            (scopeData.reuquirMoralStats > currentMoralStats ||
-                scopeData.reuquirInsaneStats > currentInsaneStats ||
-                scopeData.reuquirSenseStats > currentSenseStats))
+            if (scopeData.object_Type != StatusData.objectType.Sign && scopeData.eventName != eventName)
             {
-
-
                 Debug.Log($"❌ Removed {scopeData.name} | Require M/I/S: {scopeData.reuquirMoralStats}/{scopeData.reuquirInsaneStats}/{scopeData.reuquirSenseStats}");
                 validObjects.RemoveAt(i);
             }

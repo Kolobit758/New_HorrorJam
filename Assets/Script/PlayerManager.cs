@@ -52,6 +52,14 @@ public class PlayerManager : MonoBehaviour
         Debug.Log($"Player current status Moral: {currentMoralStats}, Insane: {currentInsaneStats}, Sense: {currentSenseStats}");
         UpdateUI();
     }
+    public void ReduceMoraltoZero()
+    {
+        currentMoralStats = 0;
+        Check();
+        
+        Debug.Log($"Player current status Moral: {currentMoralStats}, Insane: {currentInsaneStats}, Sense: {currentSenseStats}");
+        
+    }
     void UpdateUI()
     {
         if (senseSlider != null)

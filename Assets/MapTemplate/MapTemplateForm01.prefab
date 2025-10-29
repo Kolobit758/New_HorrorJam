@@ -209,7 +209,8 @@ MonoBehaviour:
   allGameObject: {fileID: 11400000, guid: 764992efe3697354e87377f2b13b5b20, type: 2}
   statusDatas: []
   ghostPrefab:
-  - {fileID: 11400000, guid: 82e5b013f08bed843b767a751373ef56, type: 2}
+  - {fileID: 11400000, guid: 27b32090426ef9847a4270934a5ac2f7, type: 2}
+  - {fileID: 11400000, guid: 496e93eb8fc2a984aaa64fb4f5e2ed7a, type: 2}
   background: {fileID: 5777740930762158712}
   signs:
   - {fileID: 1435665025313253486}
