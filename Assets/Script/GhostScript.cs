@@ -11,6 +11,7 @@ public class GhostScript : MonoBehaviour
     public GameObject GhostJumpScare;
     public AudioClip jumpscareWarning;
     public AudioClip jumpscareSound;
+    public AudioSource audioSource;
     public int senseReduceValue;
     public float jumpScareDelay = 5f;      // เวลารอจนกระทั่ง JumpScare เอง (ถ้าไม่ถูกเรียก)
     public float JumpScareDuration = 2f;   // เวลาที่ภาพ jumpscare แสดงบนจอ
@@ -24,6 +25,9 @@ public class GhostScript : MonoBehaviour
     {
         playerManager = FindFirstObjectByType<PlayerManager>();
         StartCoroutine(JumpScareTimer());
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = jumpscareWarning;
+        audioSource.Play();
     }
 
     private IEnumerator JumpScareTimer()
@@ -43,6 +47,7 @@ public class GhostScript : MonoBehaviour
 
     public void JumpScare()
     {
+
         if (anyGhostJumpscaring)
             return; // กันไม่ให้หลายตัว jumpscare พร้อมกัน
 
@@ -52,7 +57,8 @@ public class GhostScript : MonoBehaviour
             GhostJumpScare.SetActive(true);
 
         if (jumpscareSound != null)
-            AudioSource.PlayClipAtPoint(jumpscareSound, transform.position);
+            audioSource.clip = jumpscareSound;
+        audioSource.Play();
 
         if (playerManager != null)
             playerManager.ReduceSense(senseReduceValue);

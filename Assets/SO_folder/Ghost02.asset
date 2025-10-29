@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 292a9de0c25388d49a39721d710646ee, type: 3}
-  m_Name: Amulet
+  m_Name: Ghost02
   m_EditorClassIdentifier: 
-  object_Type: 0
-  ObjectPrefab: {fileID: 7617743108358452144, guid: e4020d8edfc7fc04ca9dd4b4d8eb639f, type: 3}
-  objectName: Amulet
+  object_Type: 4
+  ObjectPrefab: {fileID: 3497123320841242748, guid: 487b96fec56337843bb147dce2e731e5, type: 3}
+  objectName: Ghost02
   moralStatsChange: 0
   insaneStatsChange: 0
-  senseStatsChange: 2
-  reuquirMoralStats: 60
-  reuquirInsaneStats: 60
-  reuquirSenseStats: 60
+  senseStatsChange: 0
+  reuquirMoralStats: 0
+  reuquirInsaneStats: 0
+  reuquirSenseStats: 0
   signText: 
   eventName: 
-  SO_Skill: {fileID: 11400000, guid: 44dbccce65de1e2478d0572e7bc13a8a, type: 2}
+  SO_Skill: {fileID: 0}

@@ -17,7 +17,7 @@ MonoBehaviour:
   objectName: Candle
   moralStatsChange: 0
   insaneStatsChange: 0
-  senseStatsChange: 15
+  senseStatsChange: 3
   reuquirMoralStats: 60
   reuquirInsaneStats: 60
   reuquirSenseStats: 60
