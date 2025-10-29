@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 6967448555869161987}
   - component: {fileID: 7213814920374805835}
   m_Layer: 0
-  m_Name: EventSign
+  m_Name: RoseSign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -587,7 +587,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.5285349, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -610,5 +610,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  thisStatusData: {fileID: 11400000, guid: 03ea2893817dc874382cc38a4a0fe84a, type: 2}
+  thisStatusData: {fileID: 11400000, guid: 770649f439c778d42951d217e0f1f2e8, type: 2}
   textMeshPro: {fileID: 478694313759177224}

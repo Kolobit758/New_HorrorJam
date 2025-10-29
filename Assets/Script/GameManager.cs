@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public MapTemplateScript currentMapTemplate;
     public GameObject currentMapInstance;
     [Header("Event")]
-    public GameObject signEventPrefab;
+    public List<GameObject> signEventPrefab = new List<GameObject>();
     public GameObject signEventPos;
     GameObject signEvent;
 
@@ -36,11 +36,19 @@ public class GameManager : MonoBehaviour
 
             Debug.Log("Normal");
             // jumpscare if has ghost
-            
+            if(currentRound == 15)
+            {
+                playerManager.ReduceMoraltoZero();
+            }
             CreateMap();
             if(currentRound == 2)
             {
-                signEvent = Instantiate(signEventPrefab);
+                signEvent = Instantiate(signEventPrefab[0]);
+                signEvent.transform.position = signEventPos.transform.position;
+            }else if (currentRound == 15)
+            {
+                
+                signEvent = Instantiate(signEventPrefab[1]);
                 signEvent.transform.position = signEventPos.transform.position;
             } else
             {
