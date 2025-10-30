@@ -15,11 +15,12 @@ MonoBehaviour:
   object_Type: 1
   ObjectPrefab: {fileID: 8449579740555333200, guid: aa658d9242240084c8878c3ec2527749, type: 3}
   objectName: Sign02
-  moralStatsChange: 1
-  insaneStatsChange: -1
-  senseStatsChange: 2
-  reuquirMoralStats: 59
-  reuquirInsaneStats: 59
-  reuquirSenseStats: 59
-  signText: can u go
+  moralStatsChange: 0
+  insaneStatsChange: 0
+  senseStatsChange: -15
+  reuquirMoralStats: 70
+  reuquirInsaneStats: 70
+  reuquirSenseStats: 70
+  signText: "You\u2019re already dead."
   eventName: 
+  SO_Skill: {fileID: 0}

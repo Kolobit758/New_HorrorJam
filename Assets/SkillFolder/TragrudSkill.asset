@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58bff8d85916eb44bbb7dc05d834025c, type: 3}
-  m_Name: SwordSkill
+  m_Name: TragrudSkill
   m_EditorClassIdentifier: 
   statusData: {fileID: 0}
   ghostCanChase:
-  - {fileID: 11400000, guid: 496e93eb8fc2a984aaa64fb4f5e2ed7a, type: 2}
+  - {fileID: 11400000, guid: 300f9125a42338541a9e8c55e34029a1, type: 2}
   chaseDelay: 0.2

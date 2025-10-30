@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
         if (currentMapTemplate != null)
         {
             currentMapTemplate.RandomObject(playerManager.currentMoralStats, playerManager.currentInsaneStats, playerManager.currentSenseStats);
-            if (playerManager.currentSenseStats < 80)
+            if (playerManager.currentSenseStats < 85)
             {
                 currentMapTemplate.SpawnGhost();
                 Debug.Log("SpawnGhost");

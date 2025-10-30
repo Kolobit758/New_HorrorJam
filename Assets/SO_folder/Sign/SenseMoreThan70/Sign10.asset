@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 292a9de0c25388d49a39721d710646ee, type: 3}
-  m_Name: Tragrud
+  m_Name: Sign10
   m_EditorClassIdentifier: 
-  object_Type: 0
-  ObjectPrefab: {fileID: 4348702652175587358, guid: a7276a6990951094b84a20fcbca85393, type: 3}
-  objectName: Tragrud
+  object_Type: 1
+  ObjectPrefab: {fileID: 8449579740555333200, guid: aa658d9242240084c8878c3ec2527749, type: 3}
+  objectName: Sign10
   moralStatsChange: 0
   insaneStatsChange: 0
-  senseStatsChange: 2
-  reuquirMoralStats: 60
-  reuquirInsaneStats: 60
-  reuquirSenseStats: 60
-  signText: 
+  senseStatsChange: 0
+  reuquirMoralStats: 70
+  reuquirInsaneStats: 70
+  reuquirSenseStats: 70
+  signText: ' What have you been waiting 5 years for?'
   eventName: 
   SO_Skill: {fileID: 0}

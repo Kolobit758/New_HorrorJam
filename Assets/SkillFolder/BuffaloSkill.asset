@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: BuffaloSkill
   m_EditorClassIdentifier: 
   statusData: {fileID: 0}
-  ghostCanChase: []
+  ghostCanChase:
+  - {fileID: 11400000, guid: 27b32090426ef9847a4270934a5ac2f7, type: 2}
+  - {fileID: 11400000, guid: b6685439e29b08e448d553678ded1edd, type: 2}
   chaseDelay: 0.2

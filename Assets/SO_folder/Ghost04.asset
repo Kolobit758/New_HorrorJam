@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 292a9de0c25388d49a39721d710646ee, type: 3}
-  m_Name: Sign01
+  m_Name: Ghost04
   m_EditorClassIdentifier: 
-  object_Type: 1
-  ObjectPrefab: {fileID: 8449579740555333200, guid: aa658d9242240084c8878c3ec2527749, type: 3}
-  objectName: Sign01
-  moralStatsChange: 1
-  insaneStatsChange: -1
-  senseStatsChange: 2
-  reuquirMoralStats: 59
-  reuquirInsaneStats: 59
-  reuquirSenseStats: 59
-  signText: can u go bro
+  object_Type: 4
+  ObjectPrefab: {fileID: 1306909245697344846, guid: c729a029a2f661f4cbdfcfa73096a8f6, type: 3}
+  objectName: Ghost04
+  moralStatsChange: 0
+  insaneStatsChange: 0
+  senseStatsChange: 0
+  reuquirMoralStats: 0
+  reuquirInsaneStats: 0
+  reuquirSenseStats: 0
+  signText: 
   eventName: 
+  SO_Skill: {fileID: 0}
