@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292a9de0c25388d49a39721d710646ee, type: 3}
+  m_Name: Sign05
+  m_EditorClassIdentifier: 
+  object_Type: 1
+  ObjectPrefab: {fileID: 8449579740555333200, guid: aa658d9242240084c8878c3ec2527749, type: 3}
+  objectName: Sign05
+  moralStatsChange: 0
+  insaneStatsChange: 0
+  senseStatsChange: -20
+  reuquirMoralStats: 0
+  reuquirInsaneStats: 0
+  reuquirSenseStats: 0
+  signText: Hey hey look our roses is grawing
+  eventName: 
+  SO_Skill: {fileID: 0}
